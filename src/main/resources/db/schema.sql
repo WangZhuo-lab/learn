@@ -16,3 +16,13 @@ CREATE TABLE `user` (
 ALTER TABLE `user` ADD UNIQUE (`username`);
 ALTER TABLE `user` ADD UNIQUE (`email`);
 ALTER TABLE `user` ADD UNIQUE (`phone`);
+
+
+DROP TABLE IF EXISTS `piano`;
+CREATE TABLE `piano` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL comment '曲名',
+  `register_date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `chord` varchar(200) DEFAULT '' comment '和弦',
+  PRIMARY KEY (`id`)
+);
