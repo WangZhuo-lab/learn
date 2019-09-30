@@ -14,4 +14,6 @@ public class Piano {
 
     private String name;
 
+    private String chord;
+
 }
