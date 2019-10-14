@@ -19,5 +19,9 @@ public class PianoService {
     }
     public List<Piano> getPianos(){
         return pianoDao.findAll();
+
+    }
+    public Piano addPiano(Piano piano){
+        return pianoDao.save(piano);
     }
 }

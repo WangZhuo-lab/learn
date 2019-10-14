@@ -36,4 +36,18 @@ public class PianoController {
         mav.setViewName("pianos");
         return mav;
     }
+    
+@RequestMapping("/add")
+public ModelAndView addPiano() {
+    ModelAndView mav = new ModelAndView();
+    mav.setViewName("piano_add");
+    return mav;
+}
+
+@RequestMapping("/do_add")
+public ModelAndView doAddPiano(Piano piano) {
+    pianoService.addPiano(piano);
+    ModelAndView mav = new ModelAndView("redirect:/piano/list");
+    return mav;
+}
 }

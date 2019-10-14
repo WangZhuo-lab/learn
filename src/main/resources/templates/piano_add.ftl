@@ -22,23 +22,22 @@
      <div class="row">
        <div class="col-md-4">
          <ul class="nav nav-pills nav-stacked">
-           <li role="presentation" class="active"><a href="/piano/list">列表</a></li>
-           <li role="presentation"><a href="/piano/add">新增</a></li>
+           <li role="presentation"><a href="/piano/list">列表</a></li>
+           <li role="presentation" class="active"><a href="/piano/add">新增</a></li>
          </ul>
        </div>
        <div class="col-md-8">      
-         <table class="table table-hover">
-           <thead>
-           <th>ID</th><th>曲名</th><th>和弦</th>
-           </thead>
-           <tbody>
-           <#list pianos as piano>
-           <tr>
-           <td>${piano.id}</td><td>${piano.name}</td><td>${piano.chord}</td>
-           </tr>
-           </#list>
-           </tbody>
-         </table>
+         <form action="/piano/do_add">
+             <div class="form-group">
+                 <label for="name">曲名</label>
+                 <input type="text" class="form-control" id="name" name="name" placeholder="请输入曲名">
+             </div>
+             <div class="form-group">
+                 <label for="chord">和弦</label>
+                 <input type="text" class="form-control" id="chord" name="chord" placeholder="请输入和弦">
+             </div>
+             <button type="submit" class="btn btn-default">确认</button>
+         </form>
        </div>
      </div>
    </div>
